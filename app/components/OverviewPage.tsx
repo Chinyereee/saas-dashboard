@@ -23,7 +23,7 @@ const planStyles: Record<string, string> = {
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (!active || !payload?.length) return null;
   return (
-    <div className="bg-[rgba(17,10,31,0.95)] border border-[rgba(168,85,247,0.3)] rounded-xl px-4 py-3 text-xs" style={{ fontFamily: "var(--font-mono)" }}>
+    <div className="bg-[rgba(0,0,0,0.85)] border border-[rgba(255,255,255,0.15)] rounded-xl px-4 py-3 text-xs" style={{ fontFamily: "var(--font-mono)" }}>
       <p className="text-[var(--white-dim)] mb-1">{label}</p>
       <p className="text-[var(--purple-bright)] font-semibold">${payload[0].value.toLocaleString()}</p>
     </div>
@@ -58,7 +58,7 @@ export default function OverviewPage() {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399] animate-pulse" />
             <span className="text-[10px] text-emerald-400 font-medium" style={{ fontFamily: "var(--font-mono)" }}>LIVE</span>
           </div>
-          <button onClick={refresh} className="w-8 h-8 rounded-lg border border-[rgba(168,85,247,0.22)] bg-[rgba(168,85,247,0.06)] flex items-center justify-center text-[var(--white-mute)] hover:text-[var(--purple-bright)] hover:border-[var(--purple-bright)] transition-all">
+          <button onClick={refresh} className="w-8 h-8 rounded-lg border border-[rgba(255,255,255,0.18)] bg-[rgba(0,0,0,0.28)] flex items-center justify-center text-[var(--white-mute)] hover:text-[var(--purple-bright)] hover:border-[var(--purple-bright)] transition-all">
             <RefreshCw size={13} className={loading ? "animate-spin" : ""} />
           </button>
         </div>
@@ -82,7 +82,7 @@ export default function OverviewPage() {
             </div>
             <div className="flex gap-1">
               {["1Y","6M","1M"].map((t,i) => (
-                <button key={t} className={`text-[10px] px-2.5 py-1 rounded-md border transition-all ${i===0?"border-[var(--purple-bright)] text-[var(--purple-bright)] bg-[rgba(168,85,247,0.10)]":"border-[rgba(168,85,247,0.22)] text-[var(--white-dim)] hover:border-[var(--purple-bright)] hover:text-[var(--purple-bright)]"}`}
+                <button key={t} className={`text-[10px] px-2.5 py-1 rounded-md border transition-all ${i===0?"border-[var(--purple-bright)] text-[var(--purple-bright)] bg-[rgba(168,85,247,0.10)]":"border-[rgba(255,255,255,0.18)] text-[var(--white-dim)] hover:border-[var(--purple-bright)] hover:text-[var(--purple-bright)]"}`}
                   style={{ fontFamily:"var(--font-mono)" }}>{t}</button>
               ))}
             </div>
@@ -140,7 +140,7 @@ export default function OverviewPage() {
             <h3 className="text-sm font-bold text-[var(--white)]" style={{ fontFamily:"var(--font-syne)" }}>Recent Transactions</h3>
             <p className="text-xs text-[var(--white-dim)] mt-0.5">Refreshes automatically</p>
           </div>
-          <button onClick={refresh} className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[rgba(168,85,247,0.22)] bg-[rgba(168,85,247,0.06)] text-[var(--white-soft)] hover:border-[var(--purple-bright)] hover:text-[var(--white)] transition-all"
+          <button onClick={refresh} className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.18)] bg-[rgba(0,0,0,0.28)] text-[var(--white-soft)] hover:border-[var(--purple-bright)] hover:text-[var(--white)] transition-all"
             style={{ fontFamily:"var(--font-inter)" }}>
             Refresh
           </button>
@@ -157,7 +157,7 @@ export default function OverviewPage() {
             </thead>
             <tbody>
               {transactions.map((t,i) => (
-                <tr key={`${t.name}-${i}`} className="hover:bg-[rgba(168,85,247,0.04)] transition-colors">
+                <tr key={`${t.name}-${i}`} className="hover:bg-[rgba(255,255,255,0.03)] transition-colors">
                   <td className="py-3 px-3 pl-0">
                     <div className="flex items-center gap-2.5">
                       <div className={`w-7 h-7 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-white text-[9px] font-bold flex-shrink-0`}

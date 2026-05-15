@@ -11,11 +11,9 @@ interface StatCardProps {
 
 export default function StatCard({ label, value, change, trend, icon: Icon }: StatCardProps) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-[rgba(168,85,247,0.22)] bg-[rgba(17,10,31,0.55)] backdrop-blur-sm p-5 transition-all duration-300 hover:border-[var(--purple-bright)] hover:translate-y-[-4px] hover:shadow-[0_20px_50px_rgba(168,85,247,0.15)] cursor-default group">
-      {/* Top line */}
-      <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#c084fc] to-transparent" />
+    <div className="glass-card relative overflow-hidden rounded-2xl p-5 transition-all duration-300 hover:translate-y-[-4px] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] cursor-default group">
 
-      <div className="w-9 h-9 rounded-lg bg-[rgba(168,85,247,0.12)] border border-[rgba(168,85,247,0.22)] flex items-center justify-center mb-4 group-hover:bg-[rgba(168,85,247,0.18)] transition-colors">
+      <div className="w-9 h-9 rounded-lg bg-[rgba(168,85,247,0.12)] border border-[rgba(255,255,255,0.12)] flex items-center justify-center mb-4 group-hover:bg-[rgba(168,85,247,0.18)] transition-colors">
         <Icon size={16} className="text-[var(--purple-bright)]" />
       </div>
 

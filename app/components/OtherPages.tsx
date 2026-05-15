@@ -74,7 +74,7 @@ export function AnalyticsPage() {
             <h3 className="text-sm font-bold text-[var(--white)]" style={{ fontFamily: "var(--font-syne)" }}>Monthly Revenue</h3>
             <p className="text-xs text-[var(--white-dim)] mt-0.5">2025 · full year</p>
           </div>
-          <button className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[rgba(168,85,247,0.22)] bg-[rgba(168,85,247,0.06)] text-[var(--white-soft)] hover:border-[var(--purple-bright)] hover:text-[var(--white)] transition-all">
+          <button className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.18)] bg-[rgba(0,0,0,0.28)] text-[var(--white-soft)] hover:border-[var(--purple-bright)] hover:text-[var(--white)] transition-all">
             <Download size={12} /> Export
           </button>
         </div>
@@ -82,7 +82,7 @@ export function AnalyticsPage() {
           <BarChart data={monthlyData} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
             <XAxis dataKey="m" tick={{ fill: "rgba(245,243,255,0.25)", fontSize: 10, fontFamily: "JetBrains Mono" }} axisLine={false} tickLine={false} />
             <YAxis hide />
-            <Tooltip contentStyle={{ background: "rgba(17,10,31,0.95)", border: "1px solid rgba(168,85,247,0.3)", borderRadius: 12, fontFamily: "JetBrains Mono", fontSize: 11 }} itemStyle={{ color: "#c084fc" }} labelStyle={{ color: "rgba(245,243,255,0.4)" }} />
+            <Tooltip contentStyle={{ background: "rgba(0,0,0,0.85)", border: "0.5px solid rgba(255,255,255,0.15)", borderRadius: 12, fontFamily: "JetBrains Mono", fontSize: 11 }} itemStyle={{ color: "#c084fc" }} labelStyle={{ color: "rgba(245,243,255,0.4)" }} />
             <Bar dataKey="v" radius={[4, 4, 0, 0]}>
               {monthlyData.map((entry, i) => (
                 <Cell key={i} fill={entry.v > 9000 ? "#a855f7" : "rgba(124,58,237,0.65)"} />
@@ -151,7 +151,7 @@ export function CustomersPage() {
         <div className="flex gap-1.5 flex-wrap">
           {filters.map(f => (
             <button key={f} onClick={() => setFilter(f)}
-              className={`text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 rounded-full border transition-all ${filter === f ? "border-[var(--pink)] text-[var(--pink)] bg-[rgba(244,114,182,0.08)]" : "border-[rgba(168,85,247,0.22)] text-[var(--white-dim)] hover:border-[var(--pink)] hover:text-[var(--pink)]"}`}
+              className={`text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 rounded-full border transition-all ${filter === f ? "border-[var(--pink)] text-[var(--pink)] bg-[rgba(244,114,182,0.08)]" : "border-[rgba(255,255,255,0.18)] text-[var(--white-dim)] hover:border-[var(--pink)] hover:text-[var(--pink)]"}`}
               style={{ fontFamily: "var(--font-mono)" }}>{f}</button>
           ))}
         </div>
@@ -174,7 +174,7 @@ export function CustomersPage() {
             </thead>
             <tbody>
               {filtered.map(c => (
-                <tr key={c.name} className="hover:bg-[rgba(168,85,247,0.04)] transition-colors">
+                <tr key={c.name} className="hover:bg-[rgba(255,255,255,0.03)] transition-colors">
                   <td className="py-3 px-3 pl-0">
                     <div className="flex items-center gap-2.5">
                       <div className={`w-7 h-7 rounded-full bg-gradient-to-br ${c.color} flex items-center justify-center text-white text-[9px] font-bold`}
@@ -191,7 +191,7 @@ export function CustomersPage() {
                   <td className="py-3 px-3 text-xs text-[var(--white-mute)]">{c.loc}</td>
                   <td className="py-3 px-3 text-[11px] text-[var(--white-dim)]" style={{ fontFamily: "var(--font-mono)" }}>{c.joined}</td>
                   <td className="py-3 px-3 pr-0">
-                    <button className="text-[10px] px-3 py-1 rounded-lg border border-[rgba(168,85,247,0.22)] bg-[rgba(168,85,247,0.06)] text-[var(--white-soft)] hover:border-[var(--purple-bright)] hover:text-[var(--white)] transition-all"
+                    <button className="text-[10px] px-3 py-1 rounded-lg border border-[rgba(255,255,255,0.18)] bg-[rgba(0,0,0,0.28)] text-[var(--white-soft)] hover:border-[var(--purple-bright)] hover:text-[var(--white)] transition-all"
                       style={{ fontFamily: "var(--font-inter)" }}>View</button>
                   </td>
                 </tr>
@@ -211,8 +211,7 @@ export function RevenuePage() {
       <PageHeader eyebrow="Revenue" title="Financial" italic="Overview" sub="Monthly recurring revenue and growth breakdown." />
 
       {/* MRR Hero */}
-      <div className="relative overflow-hidden rounded-2xl border border-[rgba(168,85,247,0.22)] bg-gradient-to-br from-[rgba(124,58,237,0.15)] to-[rgba(244,114,182,0.08)] p-8 mb-5">
-        <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#c084fc] to-transparent" />
+      <div className="glass-card relative overflow-hidden rounded-2xl p-8 mb-5">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-[10px] font-medium tracking-[0.3em] uppercase text-[var(--white-dim)] mb-1" style={{ fontFamily: "var(--font-mono)" }}>Monthly Recurring Revenue</p>
@@ -236,8 +235,7 @@ export function RevenuePage() {
           { label: "Expansion MRR", value: "$1,840", change: "+8%",  t: "up" },
           { label: "Churned MRR",   value: "$420",   change: "-2%",  t: "down" },
         ].map(s => (
-          <div key={s.label} className="relative overflow-hidden rounded-2xl border border-[rgba(168,85,247,0.22)] bg-[rgba(17,10,31,0.55)] p-5">
-            <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#c084fc] to-transparent" />
+          <div key={s.label} className="glass-card relative overflow-hidden rounded-2xl p-5">
             <p className="text-[10px] tracking-[0.3em] uppercase text-[var(--white-dim)] mb-2" style={{ fontFamily: "var(--font-mono)" }}>{s.label}</p>
             <p className="text-2xl font-bold text-[var(--white)] mb-1" style={{ fontFamily: "var(--font-syne)" }}>{s.value}</p>
             <p className={`text-xs ${s.t === "up" ? "text-emerald-400" : "text-red-400"}`}>{s.change}</p>
@@ -263,7 +261,7 @@ export function RevenuePage() {
                 { plan: "Pro",        v: "pink",    accounts: 84,  mrr: "$8,316",  pct: 33, growth: "+18%" },
                 { plan: "Starter",    v: "default", accounts: 188, mrr: "$5,452",  pct: 22, growth: "+9%"  },
               ].map(r => (
-                <tr key={r.plan} className="hover:bg-[rgba(168,85,247,0.04)] transition-colors">
+                <tr key={r.plan} className="hover:bg-[rgba(255,255,255,0.03)] transition-colors">
                   <td className="py-3 px-3 pl-0"><Tag variant={r.v as any}>{r.plan}</Tag></td>
                   <td className="py-3 px-3 text-xs text-[var(--white-soft)]">{r.accounts}</td>
                   <td className="py-3 px-3 text-xs font-semibold text-[var(--white)]" style={{ fontFamily: "var(--font-mono)" }}>{r.mrr}</td>
@@ -319,8 +317,7 @@ export function SettingsPage() {
 
         <div className="flex flex-col gap-4">
           {/* Plan */}
-          <div className="relative overflow-hidden rounded-2xl border border-[rgba(168,85,247,0.22)] bg-gradient-to-br from-[rgba(124,58,237,0.12)] to-[rgba(244,114,182,0.06)] p-5">
-            <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#c084fc] to-transparent" />
+          <div className="glass-card relative overflow-hidden rounded-2xl p-5">
             <span className="text-[10px] tracking-[0.2em] uppercase px-2.5 py-1 rounded-full bg-gradient-to-r from-[var(--purple-soft)] to-[var(--purple-bright)] text-white mb-3 inline-block"
               style={{ fontFamily: "var(--font-mono)" }}>Pro Plan</span>
             <p className="text-3xl font-bold text-[var(--white)] mb-3" style={{ fontFamily: "var(--font-syne)" }}>

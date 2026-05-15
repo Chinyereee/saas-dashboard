@@ -18,10 +18,10 @@ interface SidebarProps {
 
 export default function Sidebar({ activePage, onNavigate }: SidebarProps) {
   return (
-    <aside className="flex flex-col h-screen w-[248px] flex-shrink-0 border-r border-[rgba(168,85,247,0.22)] bg-[rgba(10,6,18,0.82)] backdrop-blur-2xl z-10">
+    <aside className="flex flex-col h-screen w-[248px] flex-shrink-0 border-r border-[rgba(255,255,255,0.15)] bg-[rgba(0,0,0,0.25)] backdrop-blur-[52px] z-10">
 
       {/* Brand */}
-      <div className="flex items-center gap-3 px-5 py-5 border-b border-[rgba(168,85,247,0.22)]">
+      <div className="flex items-center gap-3 px-5 py-5 border-b border-[rgba(255,255,255,0.15)]">
         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#7c3aed] to-[#c084fc] flex items-center justify-center text-white font-bold text-sm shadow-[0_0_16px_rgba(168,85,247,0.35)] flex-shrink-0"
           style={{ fontFamily: "var(--font-syne)" }}>
           N
@@ -45,7 +45,7 @@ export default function Sidebar({ activePage, onNavigate }: SidebarProps) {
             className={cn(
               "flex items-center gap-2.5 w-full px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 relative text-left",
               activePage === id
-                ? "bg-[rgba(168,85,247,0.14)] text-[var(--white)] border border-[rgba(168,85,247,0.22)]"
+                ? "bg-[rgba(168,85,247,0.14)] text-[var(--white)] border border-[rgba(255,255,255,0.15)]"
                 : "text-[var(--white-mute)] hover:bg-[rgba(168,85,247,0.08)] hover:text-[var(--white-soft)]"
             )}
             style={{ fontFamily: "var(--font-inter)" }}
@@ -75,9 +75,9 @@ export default function Sidebar({ activePage, onNavigate }: SidebarProps) {
       </nav>
 
       {/* User */}
-      <div className="p-3 border-t border-[rgba(168,85,247,0.22)]">
+      <div className="p-3 border-t border-[rgba(255,255,255,0.15)]">
         <div className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-[rgba(168,85,247,0.08)] cursor-pointer transition-all duration-200">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[var(--purple-soft)] to-[var(--pink)] flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0 border border-[rgba(168,85,247,0.22)]"
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[var(--purple-soft)] to-[var(--pink)] flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0 border border-[rgba(255,255,255,0.15)]"
             style={{ fontFamily: "var(--font-syne)" }}>
             CJ
           </div>
